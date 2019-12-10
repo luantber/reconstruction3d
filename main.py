@@ -7,15 +7,21 @@ import sys
 import show3d
 
 
-# fondo = utils.cap_image("fondo")
-# imagen1 = utils.cap_image("imagen1")
-# imagen2 = utils.cap_image("imagen2")
 
-imagen1 = cv2.imread("test/1.png")
+# ##########
+# imagen1 = cv2.imread("test2/cubo4.jpg") ##
+# imagen2 = cv2.imread("test2/cubo4_m.jpeg")
 
-mask_imagen1  = cv2.imread("test/1_m.png")
-# mask_imagen1 = utils.get_mask(fondo,imagen1)
+# imagen1 =   cv2.resize( imagen1, (imagen2.shape[1],imagen2.shape[0]) , interpolation=cv2.INTER_AREA)
+# mask_imagen1 = utils.get_mask2(imagen2) ##
 
+
+########camera 
+fondo = utils.cap_image("fondo")
+imagen1 = utils.cap_image("imagen1")
+mask_imagen1 = utils.get_mask(fondo,imagen1)
+
+print(mask_imagen1.shape, imagen1.shape )
 normal_c_1 , mask_c_1 = run(imagen1,mask_imagen1) ##crop
 
 
